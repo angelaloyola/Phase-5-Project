@@ -6,7 +6,7 @@
 
 Last-minute cancelations leave hotels and resorts today with minimal time to fill the vacant rooms which hurts overall profitability and lowers occupancy rates. This project focuses on the invented "Eco-Oasis Suites" hotel chain that wants to build a tool that will allow them to flag reservations at risk for cancelation to launch targeted intervention strategies and retain bookings. 
 
-For the purpose of the project, I acted as a Data Scientist working for Eco-Oasis to build 3 classification models by analyzing over 119 thousand reservations. This data was extracted from [Kaggle] (https://www.kaggle.com/datasets/khairullahhamsafar/hotels-booking-data-cleaned-version/data) on a City and Resort hotel with informaion on reservation lead time, deposit type, meal vouchers, distribution channels, etc. The canceled reservations were flagged with a binary indicator, with 1 indicating a canceled reservation. These were the reservations I evaluated the model's prediciton performance on using a recall score. 
+For the purpose of the project, I acted as a Data Scientist working for Eco-Oasis to build 3 classification models by analyzing over 119 thousand reservations. This data was extracted from [Kaggle](https://www.kaggle.com/datasets/khairullahhamsafar/hotels-booking-data-cleaned-version/data) on a City and Resort hotel with informaion on reservation lead time, deposit type, meal vouchers, distribution channels, etc. The canceled reservations were flagged with a binary indicator, with 1 indicating a canceled reservation. These were the reservations I evaluated the model's prediciton performance on using a recall score. 
 
 The winning classification model used Random Forest and identified canceled reservations (reservations in class 1) 68% of the time. This was a 7 percentage point improvement from the baseline model. With continual monitoring, regular updates to the data, and collaboration with cross-functional teams, leveraging this model internally at Eco-Oasis would help flag canceled reservations with enough lead time to enact intervention strategies and enhace guest satisfaction. 
 
@@ -26,7 +26,7 @@ The data comes from one dataframe with 32 variables. The target varaible is "is_
 
 <i>Data Types: </i>Columns such as Agent and Company are stored as numerical features, but since they are ID numbers, they shouldn't be treated as numercical values in the model. I will exclude them from the model. 
 
-<i>Distribution of the Target:</i> The distribution plot for the target variable shows a class imbalance with 44k canceled reservations versus 75k non-canceled reservations. This suggested that [SMOTE] (https://www.geeksforgeeks.org/ml-handling-imbalanced-data-with-smote-and-near-miss-algorithm-in-python/) should be tested to improve recall on the model. 
+<i>Distribution of the Target:</i> The distribution plot for the target variable shows a class imbalance with 44k canceled reservations versus 75k non-canceled reservations. This suggested that [SMOTE](https://www.geeksforgeeks.org/ml-handling-imbalanced-data-with-smote-and-near-miss-algorithm-in-python/) should be tested to improve recall on the model. 
 
 ![Distribution of Data](images/distribution_of_data.png)
 
