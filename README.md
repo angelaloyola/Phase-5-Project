@@ -1,10 +1,10 @@
-#  Eco Oasis Suites: Investigating Hotel Reservation Cancellations
+#  Eco Oasis Suites: Investigating Hotel Reservation Cancelations
 ![Hotel Chain](images/hotel.jpg)
 
 
 ## Overview
 
-Last-minute cancellations leave hotels and resorts today with minimal time to fill the vacant rooms which hurts overall profitability and lowers occupancy rates. This project focuses on the invented "Eco-Oasis Suites" hotel chain that wants to build a tool that will allow them to flag reservations at risk for cancelation to launch targeted intervention strategies and retain bookings. 
+Last-minute cancelations leave hotels and resorts today with minimal time to fill the vacant rooms which hurts overall profitability and lowers occupancy rates. This project focuses on the invented "Eco-Oasis Suites" hotel chain that wants to build a tool that will allow them to flag reservations at risk for cancelation to launch targeted intervention strategies and retain bookings. 
 
 For the purpose of the project, I acted as a Data Scientist working for Eco-Oasis to build 3 classification models by analyzing over 119 thousand reservations. This data was extracted from Kaggle on a City and Resort hotel with informaion on reservation lead time, deposit type, meal vouchers, distribution channels, etc. The canceled reservations were flagged with a binary indicator, with 1 indicating a canceled reservation. These were the reservations I evaluated the model's prediciton performance on using a recall score. 
 
@@ -16,9 +16,9 @@ This project can be reproduced in Google Colab.
 
 Eco Oasis Suites is a new chain of fully sustainable and eco-friendly hotels. With features such as green rooftops and solar panels, the chain has established itself as a pioneer in the industry, attracting environmentally conscious travelers. However, the business is currently grappling with an increasing number of canceled reservations, posing a significant challenge to its overall profitability.
 
-The last-minute nature of these cancelations leaves the hotels with minimal time to fill the vacant rooms before the scheduled arrival dates. This not only leads to missed revenue opportunities but also disrupts the operational efficiency of the hotel. The need to address this problem has prompted the chain to seek a proactive solution – a tool that can help identify reservations at risk of cancellation well in advance in order to allow for intervention. 
+The last-minute nature of these cancelations leaves the hotels with minimal time to fill the vacant rooms before the scheduled arrival dates. This not only leads to missed revenue opportunities but also disrupts the operational efficiency of the hotel. The need to address this problem has prompted the chain to seek a proactive solution – a tool that can help identify reservations at risk of cancelation well in advance in order to allow for intervention. 
 
-Once the tool identifies reservations at risk of cancelation, Eco Oasis Suites can launch targeted interventions to encourage guests to retain their bookings. Possible interventions may include offering meal vouchers, exclusive promotions, room upgrades, or personalized incentives aligned with the brand's sustainability values. The goal is not only to minimize cancellations but also to enhance guest satisfaction and loyalty.
+Once the tool identifies reservations at risk of cancelation, Eco Oasis Suites can launch targeted interventions to encourage guests to retain their bookings. Possible interventions may include offering meal vouchers, exclusive promotions, room upgrades, or personalized incentives aligned with the brand's sustainability values. The goal is not only to minimize cancelations but also to enhance guest satisfaction and loyalty.
 
 ## Data Understanding and Exploration 
 
@@ -33,7 +33,7 @@ The data comes from one dataframe with 32 variables. The target varaible is "is_
 
 <i>Categorical Values:</i> By looking at the value counts for the categorical values, I identified which would be useful to test in the model. Columns that had months or dates (not stored as date type objects) will be excluded. 
 
-<i>Numerical Values:</i> There are no significant correlations between variables that would indicate any are accounting for the same variation. The highest correlation to "is_cancelled" is "lead_time" with a .29. It will be interesting to see if this is an important variable in the models using Feature Importance later on. 
+<i>Numerical Values:</i> There are no significant correlations between variables that would indicate any are accounting for the same variation. The highest correlation to "is_canceled" is "lead_time" with a .29. It will be interesting to see if this is an important variable in the models using Feature Importance later on. 
 
 
 ## Model Iterations 
@@ -80,13 +80,13 @@ By focusing on the recall score, the evaluation is focused on minimizing false n
 
 ## Conclusion and Next Steps
 
-The development of this classification model for identifying reservations that are at risk for cancellation is a step towards optimizing operational efficiency and revenue management for Hotels. 
+The development of this classification model for identifying reservations that are at risk for cancelation is a step towards optimizing operational efficiency and revenue management for Hotels. 
 
 <b> The benefits of deploying this model include: </b> 
 
-- Enabling proactive intervention strategies by flagging reservations deemed at risk of cancellation, allowing hotel management to allocate resources effectively and implement targeted retention efforts. By identifying high-risk bookings in advance, hotels can tailor personalized incentives or communication strategies to mitigate cancellations and preserve revenue streams.
+- Enabling proactive intervention strategies by flagging reservations deemed at risk of cancelation, allowing hotel management to allocate resources effectively and implement targeted retention efforts. By identifying high-risk bookings in advance, hotels can tailor personalized incentives or communication strategies to mitigate cancelations and preserve revenue streams.
 
-- Providing valuable insights into the underlying drivers of cancellations. The model sheds light on factors such as booking lead time, pricing dynamics, seasonal trends, and customer demographics. 
+- Providing valuable insights into the underlying drivers of cancelations. The model sheds light on factors such as booking lead time, pricing dynamics, seasonal trends, and customer demographics. 
 
 <b> Next Steps: </b> 
 - Continual monitoring and evaluation of model performance will be crucial to ensure its effectiveness and reliability over time.
@@ -100,6 +100,6 @@ The development of this classification model for identifying reservations that a
 ├── README.md: The top-level README for reviewers of this project
 ├── index.ipynb: Jupyter Notebook file where analysis was conducted 
 ├── Eco Oasis Suited Canceled Reservations.pdf: PDF version of project presentation
-├── data: Sourced from [Kaggle] (https://www.kaggle.com/datasets/khairullahhamsafar/hotels-booking-data-cleaned-version/data) 
+├── data: Sourced from Kaggle
 ├── images: Sourced externally and graphed results from the index file
 ```
