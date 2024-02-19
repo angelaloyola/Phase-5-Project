@@ -2,13 +2,23 @@
 ![Hotel Chain](images/hotel.jpg)
 
 
-## Overview & Business Problem
+## Overview
 
-Eco Oasis Suites is a new chain of fully sustainable and eco-friendly hotels. With features such as green rooftops and solar panels, the chain has established itself as a pioneer in the industry, attracting environmentally conscious travelers. However, the business is currently grappling with an increasing number of cancelled reservations, posing a significant challenge to its overall profitability.
+Last-minute cancellations leave hotels and resorts today with minimal time to fill the vacant rooms which hurts overall profitability and lowers occupancy rates. This project focuses on the invented "Eco-Oasis Suites" hotel chain that wants to build a tool that will allow them to flag reservations at risk for cancelation to launch targeted intervention strategies and retain bookings. 
 
-The last-minute nature of these cancellations leasves the hotels with minimal time to fill the vacant rooms before the scheduled arrival dates. This not only leads to missed revenue opportunities but also disrupts the operational efficiency of the hotel. The need to address this problem has prompted the chain to seek a proactive solution – a tool that can help identify reservations at risk of cancellation well in advance in order to allow for intervention. 
+For the purpose of the project, I acted as a Data Scientist working for Eco-Oasis to build 3 classification models by analyzing over 119 thousand reservations. This data was extracted from Kaggle on a City and Resort hotel with informaion on reservation lead time, deposit type, meal vouchers, distribution channels, etc. The canceled reservations were flagged with a binary indicator, with 1 indicating a canceled reservation. These were the reservations I evaluated the model's prediciton performance on using a recall score. 
 
-Once the tool identifies reservations at risk of cancellation, Eco Oasis Suites can launch targeted interventions to encourage guests to retain their bookings. Possible interventions may include offering meal vouchers, exclusive promotions, room upgrades, or personalized incentives aligned with the brand's sustainability values. The goal is not only to minimize cancellations but also to enhance guest satisfaction and loyalty.
+The winning classification model used Random Forest and identified canceled reservations (reservations in class 1) 68% of the time. This was a 7 percentage point improvement from the baseline model. With continual monitoring, regular updates to the data, and collaboration with cross-functional teams, leveraging this model internally at Eco-Oasis would help flag canceled reservations with enough lead time to enact intervention strategies and enhace guest satisfaction. 
+
+This project can be reproduced in Google Colab. 
+
+## Business Problem
+
+Eco Oasis Suites is a new chain of fully sustainable and eco-friendly hotels. With features such as green rooftops and solar panels, the chain has established itself as a pioneer in the industry, attracting environmentally conscious travelers. However, the business is currently grappling with an increasing number of canceled reservations, posing a significant challenge to its overall profitability.
+
+The last-minute nature of these cancelations leaves the hotels with minimal time to fill the vacant rooms before the scheduled arrival dates. This not only leads to missed revenue opportunities but also disrupts the operational efficiency of the hotel. The need to address this problem has prompted the chain to seek a proactive solution – a tool that can help identify reservations at risk of cancellation well in advance in order to allow for intervention. 
+
+Once the tool identifies reservations at risk of cancelation, Eco Oasis Suites can launch targeted interventions to encourage guests to retain their bookings. Possible interventions may include offering meal vouchers, exclusive promotions, room upgrades, or personalized incentives aligned with the brand's sustainability values. The goal is not only to minimize cancellations but also to enhance guest satisfaction and loyalty.
 
 ## Data Understanding and Exploration 
 
@@ -16,7 +26,7 @@ The data comes from one dataframe with 32 variables. The target varaible is "is_
 
 <i>Data Types: </i>Columns such as Agent and Company are stored as numerical features, but since they are ID numbers, they shouldn't be treated as numercical values in the model. I will exclude them from the model. 
 
-<i>Distribution of the Target:</i> The distribution plot for the target variable shows a class imbalance with 44k canceled reservations versus 75k non-canceled reservations. This suggests that SMOTE could be tested to improve recall on the model. 
+<i>Distribution of the Target:</i> The distribution plot for the target variable shows a class imbalance with 44k canceled reservations versus 75k non-canceled reservations. This suggested that [SMOTE] (https://www.geeksforgeeks.org/ml-handling-imbalanced-data-with-smote-and-near-miss-algorithm-in-python/) should be tested to improve recall on the model. 
 
 ![Distribution of Data](images/distribution_of_data.png)
 
@@ -81,15 +91,15 @@ The development of this classification model for identifying reservations that a
 <b> Next Steps: </b> 
 - Continual monitoring and evaluation of model performance will be crucial to ensure its effectiveness and reliability over time.
 - Regular updates and iterations based on real-time data insights will ensure that the model remains agile and responsive to changing business environments.
-- Cllaboration with cross-functional teams, including revenue management, marketing, and customer service, will facilitate the integration of the classification model into broader business strategies and decision-making processes.
+- Collaboration with cross-functional teams, including revenue management, marketing, and customer service, will facilitate the integration of the classification model into broader business strategies and decision-making processes.
 
 
 ## Repository Structure 
 
 ```
-├── README.md                           <- The top-level README for reviewers of this project
-├── index.ipynb   <- Jupyter Notebook file where analysis was conducted 
-├── .pdf         <- PDF version of project presentation
-├── data   <- Sourced from Kaggle 
-├── images <- Sourced externally and graphed results from the index file
+├── README.md: The top-level README for reviewers of this project
+├── index.ipynb: Jupyter Notebook file where analysis was conducted 
+├── Eco Oasis Suited Canceled Reservations.pdf: PDF version of project presentation
+├── data: Sourced from [Kaggle] (https://www.kaggle.com/datasets/khairullahhamsafar/hotels-booking-data-cleaned-version/data) 
+├── images: Sourced externally and graphed results from the index file
 ```
