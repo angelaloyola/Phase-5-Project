@@ -77,6 +77,10 @@ By focusing on the recall score, the evaluation is focused on minimizing false n
 
 ![Confusion Matrix](images/confusion_matrix.png)
 
+For the Random Forest model, the top 2 features in the classifer were deposit type and number of special requests. 
+
+![Feature Importance](images/Feature Importance.png)
+
 
 ## Conclusion and Next Steps
 
